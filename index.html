@@ -22,6 +22,10 @@ nav a{color:#fbeccf;text-decoration:none;margin-left:16px;font-size:15px}
 .hero h1{font-size:clamp(22px,4.5vw,32px);margin-top:6px}
 .hero p{max-width:620px;margin:8px auto 18px;font-size:18px}
 .hero svg{display:block;width:100%;max-width:700px;margin:10px auto 0;height:auto}
+.hero-img-wrap{position:relative;width:100%;max-width:700px;margin:24px auto 0;border-radius:10px 10px 0 0;overflow:hidden;border:4px solid var(--yel);border-bottom:none;box-shadow:0 -4px 24px 0 rgba(180,60,0,.25)}
+.hero-img-wrap img{display:block;width:100%;height:320px;object-fit:cover;object-position:center top}
+.hero-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(179,38,30,.18) 0%,rgba(179,38,30,.0) 50%,rgba(26,16,8,.38) 100%);pointer-events:none}
+.hero-img-strip{height:10px;background:repeating-linear-gradient(90deg,var(--red) 0 10px,var(--yel) 10px 20px,var(--grn) 20px 30px,var(--blk) 30px 40px);max-width:700px;margin:0 auto;border:0 solid var(--yel);border-width:0 4px;}
 .btn{display:inline-block;background:var(--yel);color:var(--blk);border:2px solid var(--blk);border-radius:6px;padding:12px 24px;font:bold 16px Georgia,serif;cursor:pointer;text-decoration:none}
 .btn.red{background:var(--red);color:#fff}
 .btn.grn{background:var(--grn);color:#fff}
@@ -42,6 +46,10 @@ input,select,textarea{font:16px Georgia,serif;padding:11px;border:2px solid var(
 .tag{font-size:12px;color:var(--red);text-transform:uppercase;letter-spacing:.07em;font-weight:bold}
 .card .chip{margin-top:auto;align-self:flex-start}
 .star.on{background:var(--yel);color:var(--blk);border-color:var(--blk)}
+.card-img{width:100%;height:160px;object-fit:cover;border-radius:4px;border:2px solid var(--bd);margin-bottom:4px;background:var(--bd)}
+.card-img-wrap{position:relative;border-radius:4px;overflow:hidden;margin-bottom:4px}
+.card-img-wrap img{width:100%;height:160px;object-fit:cover;display:block;background:var(--bd)}
+.card-img-wrap::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(transparent,rgba(26,16,8,.45));pointer-events:none}
 .plan{background:var(--card);border:2px solid var(--bd);outline:3px solid var(--yel);outline-offset:-9px;border-radius:8px;padding:26px 24px;display:grid;gap:12px}
 label{font-size:14px;color:var(--mu);display:grid;gap:4px;font-weight:bold}
 .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
@@ -67,23 +75,10 @@ footer a{color:var(--yel)}
 <h1>Explore Janakpur, the Land of Sita and Mithila</h1>
 <p>Temples, sacred ponds, Mithila art, food, festivals and travel help for students, youth and tourists.</p>
 <a class="btn" href="#places">Start Exploring</a>
-<svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" aria-label="Temple skyline">
-<rect x="0" y="150" width="700" height="20" fill="#f4b41a"/>
-<g fill="#fff6e0" stroke="#1a1008" stroke-width="3">
-<rect x="250" y="70" width="200" height="82"/>
-<path d="M240 72h220l-20-18H260z"/>
-<path d="M300 54v-14l50-34 50 34v14z"/>
-<rect x="190" y="104" width="60" height="48"/><rect x="450" y="104" width="60" height="48"/>
-<path d="M186 106l34-26 34 26z"/><path d="M446 106l34-26 34 26z"/>
-<rect x="110" y="124" width="80" height="28"/><rect x="510" y="124" width="80" height="28"/>
-</g>
-<g fill="#b3261e" stroke="#1a1008" stroke-width="2">
-<path d="M350 6v-6" /><circle cx="350" cy="8" r="4"/><circle cx="220" cy="78" r="3"/><circle cx="480" cy="78" r="3"/>
-<rect x="335" y="100" width="30" height="52" rx="15"/>
-<rect x="272" y="96" width="14" height="22" rx="7"/><rect x="414" y="96" width="14" height="22" rx="7"/>
-</g>
-<path d="M0 156q25 -8 50 0t50 0t50 0t50 0t50 0t50 0t50 0t50 0t50 0t50 0t50 0t50 0t50 0t50 0" fill="none" stroke="#1f7a4d" stroke-width="4"/>
-</svg>
+<div class="hero-img-wrap">
+  <img src="image.png" alt="Janakpurdham – the Land of Sita and Mithila">
+</div>
+<div class="hero-img-strip"></div>
 </div></div>
 <div class="bord thin"></div>
 
@@ -134,35 +129,43 @@ footer a{color:var(--yel)}
 <div class="bord"></div>
 <footer>🪔 Explore Janakpur · Janakpurdham, Mithila · <a href="mailto:rohitkarna2023@gmail.com">rohitkarna2023@gmail.com</a></footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 const OWNER='rohitkarna2023@gmail.com';
+// ── EmailJS config ── replace these three values with your own ──────────────
+const EJS_PUBLIC_KEY  = '2ehNEcrhQk81ScGQd';      // Account → General → Public Key
+const EJS_SERVICE_ID  = 'service_tyue1jr';      // Email Services → Service ID
+const EJS_TEMPLATE_ID = 'template_m4m7abs';     // Email Templates → Template ID
+// ────────────────────────────────────────────────────────────────────────────
+emailjs.init({ publicKey: EJS_PUBLIC_KEY });
 const P=[
-['🛕','Janaki Mandir','Temples','The grand white marble temple dedicated to Goddess Sita, and the heart of Janakpurdham.'],
-['💍','Ram Janaki Vivah Mandap','Temples','Near Janaki Mandir, associated with the wedding of Ram and Sita.'],
-['🛕','Ram Mandir','Temples','A well-known temple in the city, popular with pilgrims.'],
-['🏹','Dhanushadham','Temples','A sacred site near Janakpur linked to the story of Shiva’s bow.'],
-['💧','Ganga Sagar','Sacred Ponds','One of the city’s holy ponds with ghats, rituals and evening atmosphere.'],
-['💧','Dhanush Sagar','Sacred Ponds','A sacred pond near the Vivah Mandap, central to local religious life.'],
-['💧','Ratna Sagar','Sacred Ponds','A peaceful pond area in the city for a quiet walk.'],
-['🎨','Mithila Art','Culture & Art','Colourful Mithila (Madhubani-style) paintings, made on walls and paper by local artists.'],
-['🏘️','Mithila Villages','Culture & Art','Villages where painted walls, folk songs and traditions are part of daily life.'],
-['🎓','Student & Youth Learning Tours','Culture & Art','Heritage walks, art workshops and group programs for schools and colleges.'],
-['🍛','Mithila Food','Food','Try local Mithila dishes and sweets in the city’s eateries.'],
-['🎉','Vivah Panchami','Festivals','The big festival celebrating the wedding of Ram and Sita, with processions and crowds.'],
-['🌈','Ram Navami & Holi','Festivals','Festive seasons when the city fills with colour and devotion.'],
-['🚂','Railway Journey','Travel','Take the local railway link towards the Indian border region for a slow, scenic trip.'],
-['🚌','Getting Here','Travel','Information on roads, buses and arriving from Kathmandu, India and the Terai.'],
-['🛏️','Stay & Dharamshalas','Travel','Hotels, guest houses and pilgrim stays for all budgets.']];
+['🛕','Janaki Mandir','Temples','The grand white marble temple dedicated to Goddess Sita, and the heart of Janakpurdham.','https://upload.wikimedia.org/wikipedia/commons/2/2b/Janaki_Mandir%2C_Janakpur_20211009.jpg'],
+['💍','Ram Janaki Vivah Mandap','Temples','Near Janaki Mandir, associated with the wedding of Ram and Sita.','https://upload.wikimedia.org/wikipedia/commons/2/23/Ram_Janaki_Temple-Janakpur030315_MG_36640031.jpg'],
+['🛕','Ram Mandir','Temples','A well-known temple in the city, popular with pilgrims.','https://upload.wikimedia.org/wikipedia/commons/4/44/Janaki_Temple_Janakpur_Dhanusha_Nepal_Rajesh_Dhungana_%2831%29.jpg'],
+['🏹','Dhanushadham','Temples','A sacred site near Janakpur linked to the story of Shiva\u2019s bow.','https://upload.wikimedia.org/wikipedia/commons/3/3f/Dhanushadham_Govindapur_Janakpur_Dhanusha_Nepal_Rajesh_Dhungana_%289%29.jpg'],
+['💧','Ganga Sagar','Sacred Ponds','One of the city\u2019s holy ponds with ghats, rituals and evening atmosphere.','https://upload.wikimedia.org/wikipedia/commons/e/eb/Gangasagar%2C_Janakpur.jpg'],
+['💧','Dhanush Sagar','Sacred Ponds','A sacred pond near the Vivah Mandap, central to local religious life.','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQugMGFtJLCMOGECZmS7vfPvQxifuIRfVWSV9mtyP_FvD1YntvZCKpqlhI&s=10'],
+['💧','Ratna Sagar','Sacred Ponds','A peaceful pond area in the city for a quiet walk.','https://upload.wikimedia.org/wikipedia/commons/f/fe/Raajshri_Janak_Temple_Janakpur_Dhanusha_Nepal_Rajesh_Dhungana.jpg'],
+['🎨','Mithila Art','Culture & Art','Colourful Mithila (Madhubani-style) paintings, made on walls and paper by local artists.','https://upload.wikimedia.org/wikipedia/commons/2/28/Madhubani_art.jpg'],
+['🏘','Mithila Villages','Culture & Art','Villages where painted walls, folk songs and traditions are part of daily life.','https://upload.wikimedia.org/wikipedia/commons/4/48/Sama_Chakeva_Festival.jpg'],
+['🎓','Student & Youth Learning Tours','Culture & Art','Heritage walks, art workshops and group programs for schools and colleges.','https://upload.wikimedia.org/wikipedia/commons/c/c1/Jhijhiya%2C_Folk_culture_of_Mithila.png'],
+['🍛','Mithila Food','Food','Try local Mithila dishes and sweets in the city\u2019s eateries.','https://upload.wikimedia.org/wikipedia/commons/c/cd/Dal_bhat.jpg'],
+['🎉','Vivah Panchami','Festivals','The big festival celebrating the wedding of Ram and Sita, with processions and crowds.','https://upload.wikimedia.org/wikipedia/commons/d/d4/Janaki_Mandir_night_view%2C_Janakpur_20211009.jpg'],
+['🌈','Ram Navami & Holi','Festivals','Festive seasons when the city fills with colour and devotion.','https://upload.wikimedia.org/wikipedia/commons/6/6c/Janaki_Temple_Janakpur-Janakpur030315_MG_36680059.jpg'],
+['🚂','Railway Journey','Travel','Take the local railway link towards the Indian border region for a slow, scenic trip.','https://upload.wikimedia.org/wikipedia/commons/b/b3/Janakpur_Railway_Station%2C_Nepal_Railway_20200918.jpg'],
+['🚌','Getting Here','Travel','Information on roads, buses and arriving from Kathmandu, India and the Terai.','https://upload.wikimedia.org/wikipedia/commons/6/69/Nepal_Railway_and_Janakpur_Railway_Station%2C_Nepal_20221125.jpg'],
+['🛏','Stay & Dharamshalas','Travel','Hotels, guest houses and pilgrim stays for all budgets.','https://upload.wikimedia.org/wikipedia/commons/2/23/Ram_Janaki_Temple-Janakpur030315_MG_36640031.jpg']];
 const CC=[['🇳🇵','+977','Nepal'],['🇮🇳','+91','India'],['🇺🇸','+1','USA'],['🇨🇦','+1','Canada'],['🇬🇧','+44','UK'],['🇦🇺','+61','Australia'],['🇧🇩','+880','Bangladesh'],['🇱🇰','+94','Sri Lanka'],['🇧🇹','+975','Bhutan'],['🇵🇰','+92','Pakistan'],['🇨🇳','+86','China'],['🇯🇵','+81','Japan'],['🇰🇷','+82','South Korea'],['🇹🇭','+66','Thailand'],['🇲🇾','+60','Malaysia'],['🇸🇬','+65','Singapore'],['🇦🇪','+971','UAE'],['🇸🇦','+966','Saudi Arabia'],['🇶🇦','+974','Qatar'],['🇰🇼','+965','Kuwait'],['🇩🇪','+49','Germany'],['🇫🇷','+33','France'],['🇮🇹','+39','Italy'],['🇪🇸','+34','Spain'],['🇳🇱','+31','Netherlands'],['🇨🇭','+41','Switzerland'],['🇷🇺','+7','Russia'],['🇳🇿','+64','New Zealand'],['🇿🇦','+27','South Africa'],['🇧🇷','+55','Brazil'],['🌐','+','Other (type code in number)']];
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 document.getElementById('cc').innerHTML=CC.map(c=>`<option value="${c[1]}">${c[0]} ${c[1]} ${c[2]}</option>`).join('');
 let cat='All',fav=new Set(),db=null,user=null,all=[];
 const cats=['All',...new Set(P.map(p=>p[2]))];
 function drawCats(){document.getElementById('cats').innerHTML=cats.map(c=>`<button type="button" class="chip ${c===cat?'on':''}" data-c="${esc(c)}">${esc(c)}</button>`).join('');}
+
 function drawList(){
  const q=document.getElementById('q').value.toLowerCase();
  document.getElementById('list').innerHTML=P.filter(p=>(cat==='All'||p[2]===cat)&&(p[1]+p[3]+p[2]).toLowerCase().includes(q))
- .map(p=>`<div class="card"><div class="i">${p[0]}</div><span class="tag">${esc(p[2])}</span><h3>${esc(p[1])}</h3><p>${esc(p[3])}</p><button type="button" class="chip star ${fav.has(p[1])?'on':''}" data-p="${esc(p[1])}">${fav.has(p[1])?'⭐ Saved':'☆ I’m interested'}</button></div>`).join('')||'<p>No results.</p>';
+ .map(p=>`<div class="card">${p[4]?`<div class="card-img-wrap"><img src="${esc(p[4])}" alt="${esc(p[1])}" loading="lazy"></div>`:`<div class="i">${p[0]}</div>`}<span class="tag">${esc(p[2])}</span><h3>${esc(p[1])}</h3><p>${esc(p[3])}</p><button type="button" class="chip star ${fav.has(p[1])?'on':''}" data-p="${esc(p[1])}">${fav.has(p[1])?'⭐ Saved':'☆ I\'m interested'}</button></div>`).join('')||'<p>No results.</p>';
  document.getElementById('picked').textContent=fav.size?'Interested in: '+[...fav].join(', '):'No favourites selected yet.';
 }
 document.getElementById('cats').onclick=e=>{const c=e.target.dataset.c;if(c){cat=c;drawCats();drawList();}};
@@ -195,16 +198,38 @@ document.getElementById('f').addEventListener('submit',async e=>{
  if(ph.length<6||ph.length>14){msg.textContent='Please enter a valid mobile number.';return;}
  o.mobile=(o.cc==='+'?'+':o.cc)+ph;delete o.cc;delete o.phone;
  o.interests=[...fav];o.created=new Date().toISOString();
- const body=`Name: ${o.name}\nType: ${o.type}\nMobile: ${o.mobile}\nEmail: ${o.email||'-'}\nFrom: ${o.origin||'-'}\nPeople: ${o.people}\nArrival: ${o.date||'-'}\nNeed: ${o.need}\nInterested in: ${o.interests.join(', ')||'-'}\nMessage: ${o.notes||'-'}`;
- const mail=document.getElementById('mail');
- mail.href='mailto:'+OWNER+'?subject='+encodeURIComponent('Explore Janakpur request: '+o.name)+'&body='+encodeURIComponent(body);
- if(!db){msg.textContent='Requests cannot be saved in this view. Please use the email button below.';document.getElementById('after').style.display='grid';return;}
+ const btn=e.target.querySelector('button[type=submit]');
+ btn.disabled=true;btn.textContent='Sending...';
+ msg.textContent='';
+ const params={
+  to_email: OWNER,
+  from_name: o.name,
+  visitor_type: o.type,
+  mobile: o.mobile,
+  reply_to: o.email||'—',
+  origin: o.origin||'—',
+  people: o.people,
+  arrival: o.date||'—',
+  need: o.need,
+  interests: o.interests.join(', ')||'—',
+  message: o.notes||'—'
+ };
  try{
-  await db.collection('requests').doc('r'+Date.now()+Math.random().toString(36).slice(2,6)).set(o);
-  msg.textContent='Thank you! We received your request and will call or message you soon.';
-  document.getElementById('after').style.display='grid';
+  await emailjs.send(EJS_SERVICE_ID, EJS_TEMPLATE_ID, params);
+  msg.style.color='var(--grn)';
+  msg.textContent='Thank you! Your request has been sent. We will call or message you soon.';
   e.target.reset();fav.clear();drawList();
- }catch(err){msg.textContent='Could not save. Please try again or use the email button.';document.getElementById('after').style.display='grid';}
+ }catch(err){
+  console.error('EmailJS error',err);
+  msg.style.color='var(--red)';
+  msg.textContent='Could not send. Please try the email button below or contact us directly.';
+  const mail=document.getElementById('mail');
+  const body='Name: '+o.name+'\nType: '+o.type+'\nMobile: '+o.mobile+'\nEmail: '+(o.email||'-')+'\nFrom: '+(o.origin||'-')+'\nPeople: '+o.people+'\nArrival: '+(o.date||'-')+'\nNeed: '+o.need+'\nInterested in: '+(o.interests.join(', ')||'-')+'\nMessage: '+(o.notes||'-');
+  mail.href='mailto:'+OWNER+'?subject='+encodeURIComponent('Explore Janakpur request: '+o.name)+'&body='+encodeURIComponent(body);
+  document.getElementById('after').style.display='grid';
+ }finally{
+  btn.disabled=false;btn.textContent='Send Request';
+ }
 });
 document.getElementById('csv').addEventListener('click',async()=>{
  try{
