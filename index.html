@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Explore Janakpur · जनकपुरधाम</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#fff6e0;--card:#fffdf6;--tx:#2a1408;--mu:#6e5238;--red:#b3261e;--yel:#f4b41a;--grn:#1f7a4d;--blk:#1a1008;--bd:#e0c48a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d120a;--card:#2b1b10;--tx:#fbeccf;--mu:#cdb08a;--bd:#5a4026}}
+:root[data-theme="dark"]{--bg:#1d120a;--card:#2b1b10;--tx:#fbeccf;--mu:#cdb08a;--bd:#5a4026}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.6 Georgia,'Times New Roman',serif}
+h1,h2,h3{margin:0 0 .4em;line-height:1.2}
+.w{max-width:1000px;margin:0 auto;padding:0 18px}
+.bord{height:14px;background:
+ repeating-linear-gradient(90deg,var(--red) 0 14px,var(--yel) 14px 28px,var(--grn) 28px 42px,var(--blk) 42px 56px)}
+.bord.thin{height:8px}
+nav{background:var(--blk);color:#fbeccf}
+nav .w{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+nav b{color:var(--yel);font-size:20px}
+nav a{color:#fbeccf;text-decoration:none;margin-left:16px;font-size:15px}
+.hero{background:var(--red);color:#fff;text-align:center;padding:34px 0 0}
+.hero .dev{font-size:clamp(34px,8vw,60px);color:var(--yel);font-weight:bold;line-height:1.1}
+.hero h1{font-size:clamp(22px,4.5vw,32px);margin-top:6px}
+.hero p{max-width:620px;margin:8px auto 18px;font-size:18px}
+.hero svg{display:block;width:100%;max-width:700px;margin:10px auto 0;height:auto}
+.btn{display:inline-block;background:var(--yel);color:var(--blk);border:2px solid var(--blk);border-radius:6px;padding:12px 24px;font:bold 16px Georgia,serif;cursor:pointer;text-decoration:none}
+.btn.red{background:var(--red);color:#fff}
+.btn.grn{background:var(--grn);color:#fff}
+section{padding:32px 0}
+h2{font-size:28px;color:var(--red);border-bottom:4px double var(--yel);padding-bottom:6px;display:inline-block}
+.sub{color:var(--mu);margin:0 0 14px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.chip{border:2px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:7px 14px;font:14px Georgia,serif;cursor:pointer}
+.chip.on{background:var(--grn);color:#fff;border-color:var(--grn)}
+input,select,textarea{font:16px Georgia,serif;padding:11px;border:2px solid var(--bd);border-radius:6px;background:var(--card);color:var(--tx);width:100%}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card{background:var(--card);border:2px solid var(--bd);border-top:6px solid var(--red);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.card:nth-child(3n+2){border-top-color:var(--grn)}
+.card:nth-child(3n){border-top-color:var(--yel)}
+.card .i{font-size:32px}
+.card h3{font-size:19px;margin:0}
+.card p{margin:0;color:var(--mu);font-size:15px}
+.tag{font-size:12px;color:var(--red);text-transform:uppercase;letter-spacing:.07em;font-weight:bold}
+.card .chip{margin-top:auto;align-self:flex-start}
+.star.on{background:var(--yel);color:var(--blk);border-color:var(--blk)}
+.plan{background:var(--card);border:2px solid var(--bd);outline:3px solid var(--yel);outline-offset:-9px;border-radius:8px;padding:26px 24px;display:grid;gap:12px}
+label{font-size:14px;color:var(--mu);display:grid;gap:4px;font-weight:bold}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.phone{display:grid;grid-template-columns:minmax(110px,150px) 1fr;gap:8px}
+.hint{font-size:13px;color:var(--grn);font-weight:normal}
+#msg{font-weight:bold;min-height:1.4em}
+#after{display:none;gap:8px;margin-top:4px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:14px}
+.stat{background:var(--card);border:2px solid var(--bd);border-radius:8px;padding:12px;text-align:center;font-size:14px}
+.stat b{display:block;font-size:28px;color:var(--red)}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;background:var(--card)}
+th,td{border:1px solid var(--bd);padding:8px;text-align:left;white-space:nowrap}
+th{background:var(--blk);color:var(--yel)}
+td a{color:var(--grn);font-weight:bold}
+footer{background:var(--blk);color:#fbeccf;text-align:center;padding:22px 18px;font-size:14px}
+footer a{color:var(--yel)}
+</style></head><body>
+<nav><div class="w"><b>🪔 Explore Janakpur</b><div><a href="#places">Places</a><a href="#plan">Plan a Visit</a></div></div></nav>
+<div class="bord"></div>
+<div class="hero"><div class="w">
+<div class="dev">जनकपुरधाम</div>
+<h1>Explore Janakpur, the Land of Sita and Mithila</h1>
+<p>Temples, sacred ponds, Mithila art, food, festivals and travel help for students, youth and tourists.</p>
+<a class="btn" href="#places">Start Exploring</a>
+<svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" aria-label="Temple skyline">
+<rect x="0" y="150" width="700" height="20" fill="#f4b41a"/>
+<g fill="#fff6e0" stroke="#1a1008" stroke-width="3">
+<rect x="250" y="70" width="200" height="82"/>
+<path d="M240 72h220l-20-18H260z"/>
+<path d="M300 54v-14l50-34 50 34v14z"/>
+<rect x="190" y="104" width="60" height="48"/><rect x="450" y="104" width="60" height="48"/>
+<path d="M186 106l34-26 34 26z"/><path d="M446 106l34-26 34 26z"/>
+<rect x="110" y="124" width="80" height="28"/><rect x="510" y="124" width="80" height="28"/>
+</g>
+<g fill="#b3261e" stroke="#1a1008" stroke-width="2">
+<path d="M350 6v-6" /><circle cx="350" cy="8" r="4"/><circle cx="220" cy="78" r="3"/><circle cx="480" cy="78" r="3"/>
+<rect x="335" y="100" width="30" height="52" rx="15"/>
+<rect x="272" y="96" width="14" height="22" rx="7"/><rect x="414" y="96" width="14" height="22" rx="7"/>
+</g>
+<path d="M0 156q25 -8 50 0t50 0t50 0t50 0t50 0t50 0t50 0t50 0t50 0t50 0t50 0t50 0t50 0t50 0" fill="none" stroke="#1f7a4d" stroke-width="4"/>
+</svg>
+</div></div>
+<div class="bord thin"></div>
+
+<section id="places"><div class="w">
+<h2>Places &amp; Experiences</h2>
+<p class="sub">Tap ☆ on what you like, then send us a visit request below.</p>
+<div class="tools" id="cats"></div>
+<input id="q" placeholder="Search temples, art, food, festivals..." style="margin-bottom:14px">
+<div class="grid" id="list"></div>
+</div></section>
+<div class="bord thin"></div>
+
+<section id="plan"><div class="w">
+<h2>Plan Your Visit</h2>
+<p class="sub">Tell us about your trip. We will call or message you on your mobile number.</p>
+<form id="f" class="plan">
+<div class="row">
+<label>Name / Group name<input name="name" required></label>
+<label>I am a<select name="type"><option>Student</option><option>Youth</option><option>Tourist (Nepal)</option><option>Tourist (India)</option><option>Foreign tourist</option><option>Tour operator</option></select></label>
+</div>
+<label>Mobile number (WhatsApp / call) <span class="hint">We reach you fastest by phone</span>
+<div class="phone"><select name="cc" id="cc" aria-label="Country code"></select><input name="phone" id="phone" type="tel" inputmode="numeric" placeholder="98XXXXXXXX" required></div></label>
+<div class="row">
+<label>Email (optional)<input name="email" type="email"></label>
+<label>Country / City<input name="origin"></label>
+</div>
+<div class="row">
+<label>Number of people<input name="people" type="number" min="1" max="500" value="1" required></label>
+<label>Planned arrival<input name="date" type="date"></label>
+</div>
+<label>What help do you need?<select name="need"><option>Guide / local tour</option><option>Stay / accommodation</option><option>Food experience</option><option>Travel &amp; transport</option><option>Student / youth group program</option><option>Just information</option></select></label>
+<label>Message<textarea name="notes" rows="3"></textarea></label>
+<div id="picked" style="color:var(--mu);font-size:14px">No favourites selected yet.</div>
+<button class="btn red" type="submit">Send Request</button>
+<div id="msg"></div>
+<div id="after"><a class="btn grn" id="mail" href="#">✉️ Also send by email</a></div>
+</form></div></section>
+
+<section id="admin" style="display:none"><div class="w">
+<h2>Visitor Tracking Dashboard</h2>
+<div class="stats" id="stats"></div>
+<h3>Most liked places</h3>
+<div class="stats" id="top"></div>
+<h3>Requests</h3>
+<div class="tw"><table><thead><tr><th>Received</th><th>Name</th><th>Type</th><th>People</th><th>Mobile</th><th>Email</th><th>Arrival</th><th>Need</th><th>Interests</th><th>Message</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p><button class="btn" id="csv">Download CSV</button></p>
+</div></section>
+<div class="bord"></div>
+<footer>🪔 Explore Janakpur · Janakpurdham, Mithila · <a href="mailto:rohitkarna2023@gmail.com">rohitkarna2023@gmail.com</a></footer>
+
+<script>
+const OWNER='rohitkarna2023@gmail.com';
+const P=[
+['🛕','Janaki Mandir','Temples','The grand white marble temple dedicated to Goddess Sita, and the heart of Janakpurdham.'],
+['💍','Ram Janaki Vivah Mandap','Temples','Near Janaki Mandir, associated with the wedding of Ram and Sita.'],
+['🛕','Ram Mandir','Temples','A well-known temple in the city, popular with pilgrims.'],
+['🏹','Dhanushadham','Temples','A sacred site near Janakpur linked to the story of Shiva’s bow.'],
+['💧','Ganga Sagar','Sacred Ponds','One of the city’s holy ponds with ghats, rituals and evening atmosphere.'],
+['💧','Dhanush Sagar','Sacred Ponds','A sacred pond near the Vivah Mandap, central to local religious life.'],
+['💧','Ratna Sagar','Sacred Ponds','A peaceful pond area in the city for a quiet walk.'],
+['🎨','Mithila Art','Culture & Art','Colourful Mithila (Madhubani-style) paintings, made on walls and paper by local artists.'],
+['🏘️','Mithila Villages','Culture & Art','Villages where painted walls, folk songs and traditions are part of daily life.'],
+['🎓','Student & Youth Learning Tours','Culture & Art','Heritage walks, art workshops and group programs for schools and colleges.'],
+['🍛','Mithila Food','Food','Try local Mithila dishes and sweets in the city’s eateries.'],
+['🎉','Vivah Panchami','Festivals','The big festival celebrating the wedding of Ram and Sita, with processions and crowds.'],
+['🌈','Ram Navami & Holi','Festivals','Festive seasons when the city fills with colour and devotion.'],
+['🚂','Railway Journey','Travel','Take the local railway link towards the Indian border region for a slow, scenic trip.'],
+['🚌','Getting Here','Travel','Information on roads, buses and arriving from Kathmandu, India and the Terai.'],
+['🛏️','Stay & Dharamshalas','Travel','Hotels, guest houses and pilgrim stays for all budgets.']];
+const CC=[['🇳🇵','+977','Nepal'],['🇮🇳','+91','India'],['🇺🇸','+1','USA'],['🇨🇦','+1','Canada'],['🇬🇧','+44','UK'],['🇦🇺','+61','Australia'],['🇧🇩','+880','Bangladesh'],['🇱🇰','+94','Sri Lanka'],['🇧🇹','+975','Bhutan'],['🇵🇰','+92','Pakistan'],['🇨🇳','+86','China'],['🇯🇵','+81','Japan'],['🇰🇷','+82','South Korea'],['🇹🇭','+66','Thailand'],['🇲🇾','+60','Malaysia'],['🇸🇬','+65','Singapore'],['🇦🇪','+971','UAE'],['🇸🇦','+966','Saudi Arabia'],['🇶🇦','+974','Qatar'],['🇰🇼','+965','Kuwait'],['🇩🇪','+49','Germany'],['🇫🇷','+33','France'],['🇮🇹','+39','Italy'],['🇪🇸','+34','Spain'],['🇳🇱','+31','Netherlands'],['🇨🇭','+41','Switzerland'],['🇷🇺','+7','Russia'],['🇳🇿','+64','New Zealand'],['🇿🇦','+27','South Africa'],['🇧🇷','+55','Brazil'],['🌐','+','Other (type code in number)']];
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+document.getElementById('cc').innerHTML=CC.map(c=>`<option value="${c[1]}">${c[0]} ${c[1]} ${c[2]}</option>`).join('');
+let cat='All',fav=new Set(),db=null,user=null,all=[];
+const cats=['All',...new Set(P.map(p=>p[2]))];
+function drawCats(){document.getElementById('cats').innerHTML=cats.map(c=>`<button type="button" class="chip ${c===cat?'on':''}" data-c="${esc(c)}">${esc(c)}</button>`).join('');}
+function drawList(){
+ const q=document.getElementById('q').value.toLowerCase();
+ document.getElementById('list').innerHTML=P.filter(p=>(cat==='All'||p[2]===cat)&&(p[1]+p[3]+p[2]).toLowerCase().includes(q))
+ .map(p=>`<div class="card"><div class="i">${p[0]}</div><span class="tag">${esc(p[2])}</span><h3>${esc(p[1])}</h3><p>${esc(p[3])}</p><button type="button" class="chip star ${fav.has(p[1])?'on':''}" data-p="${esc(p[1])}">${fav.has(p[1])?'⭐ Saved':'☆ I’m interested'}</button></div>`).join('')||'<p>No results.</p>';
+ document.getElementById('picked').textContent=fav.size?'Interested in: '+[...fav].join(', '):'No favourites selected yet.';
+}
+document.getElementById('cats').onclick=e=>{const c=e.target.dataset.c;if(c){cat=c;drawCats();drawList();}};
+document.getElementById('q').oninput=drawList;
+document.getElementById('list').onclick=e=>{const p=e.target.dataset.p;if(p){fav.has(p)?fav.delete(p):fav.add(p);drawList();}};
+drawCats();drawList();
+const msg=document.getElementById('msg');
+(async()=>{
+ try{db=await claude.use('db');user=await claude.use('user');}catch(e){}
+ try{
+  if(db&&user&&user.canEdit()){
+   document.getElementById('admin').style.display='';
+   db.collection('requests').onSnapshot(s=>{all=[];s.forEach(d=>all.push(d.data?d.data():d));all.sort((a,b)=>String(b.created).localeCompare(a.created));render();});
+  }
+ }catch(e){}
+})();
+function render(){
+ const sum=t=>all.filter(b=>!t||b.type===t).reduce((n,b)=>n+(+b.people||0),0);
+ document.getElementById('stats').innerHTML=[['Total people',sum()],['Requests',all.length],['Students',sum('Student')],['Youth',sum('Youth')],['Tourists',sum('Tourist (Nepal)')+sum('Tourist (India)')+sum('Foreign tourist')],['Tour operators',sum('Tour operator')]].map(([k,v])=>`<div class="stat"><b>${v}</b>${k}</div>`).join('');
+ const c={};all.forEach(b=>(b.interests||[]).forEach(i=>c[i]=(c[i]||0)+1));
+ const t=Object.entries(c).sort((a,b)=>b[1]-a[1]).slice(0,6);
+ document.getElementById('top').innerHTML=t.length?t.map(([k,v])=>`<div class="stat"><b>${v}</b>${esc(k)}</div>`).join(''):'<p class="sub">No data yet.</p>';
+ document.getElementById('rows').innerHTML=all.map(b=>{const n=esc(b.mobile);const wa=String(b.mobile||'').replace(/\D/g,'');
+  return `<tr><td>${esc((b.created||'').slice(0,10))}</td><td>${esc(b.name)}</td><td>${esc(b.type)}</td><td>${esc(b.people)}</td><td>${n?`<a href="tel:${esc(b.mobile)}">${n}</a> · <a href="https://wa.me/${wa}">WhatsApp</a>`:''}</td><td>${esc(b.email)}</td><td>${esc(b.date)}</td><td>${esc(b.need)}</td><td>${esc((b.interests||[]).join('; '))}</td><td>${esc(b.notes)}</td></tr>`}).join('');
+}
+document.getElementById('f').addEventListener('submit',async e=>{
+ e.preventDefault();
+ const o=Object.fromEntries(new FormData(e.target).entries());
+ let ph=String(o.phone||'').replace(/[^\d]/g,'').replace(/^0+/,'');
+ if(ph.length<6||ph.length>14){msg.textContent='Please enter a valid mobile number.';return;}
+ o.mobile=(o.cc==='+'?'+':o.cc)+ph;delete o.cc;delete o.phone;
+ o.interests=[...fav];o.created=new Date().toISOString();
+ const body=`Name: ${o.name}\nType: ${o.type}\nMobile: ${o.mobile}\nEmail: ${o.email||'-'}\nFrom: ${o.origin||'-'}\nPeople: ${o.people}\nArrival: ${o.date||'-'}\nNeed: ${o.need}\nInterested in: ${o.interests.join(', ')||'-'}\nMessage: ${o.notes||'-'}`;
+ const mail=document.getElementById('mail');
+ mail.href='mailto:'+OWNER+'?subject='+encodeURIComponent('Explore Janakpur request: '+o.name)+'&body='+encodeURIComponent(body);
+ if(!db){msg.textContent='Requests cannot be saved in this view. Please use the email button below.';document.getElementById('after').style.display='grid';return;}
+ try{
+  await db.collection('requests').doc('r'+Date.now()+Math.random().toString(36).slice(2,6)).set(o);
+  msg.textContent='Thank you! We received your request and will call or message you soon.';
+  document.getElementById('after').style.display='grid';
+  e.target.reset();fav.clear();drawList();
+ }catch(err){msg.textContent='Could not save. Please try again or use the email button.';document.getElementById('after').style.display='grid';}
+});
+document.getElementById('csv').addEventListener('click',async()=>{
+ try{
+  const dl=await claude.use('downloads');if(!dl)return;
+  const h=['created','name','type','people','mobile','email','origin','date','need','interests','notes'];
+  const q=v=>'"'+String(Array.isArray(v)?v.join('; '):(v??'')).replace(/"/g,'""')+'"';
+  await dl.save({filename:'explore-janakpur-requests.csv',data:[h.join(',')].concat(all.map(b=>h.map(k=>q(b[k])).join(','))).join('\n')});
+ }catch(e){}
+});
+</script></body></html>
